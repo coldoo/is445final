@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <title>This is my example homepage.</title>
+    </head>
+    <body>
+        <p>
+            Number of Accidents and Injuries Every Hour
+        </p>
+        <div id="myviz">
+        </div>
+    </body>
+    <script>
+        mySpec = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+    "data": {"url": "https://data.cityofchicago.org/resource/85ca-t3if.csv"},
+    "mark": "bar",
+      "width": 300,
+  "height": 200,
+    "encoding": {
+        "x": {"field": "crash_hour", "type": "quantitative", "title": "Hour of Crash"},
+        "y": {"aggregate": "count", "type": "quantitative"},
+                "color": {"aggregate": "sum", "field": "injuries_total", "title": "Total Injuries"
+        }
+    }
+};
+        vegaEmbed('#myviz', mySpec);
+    </script>
+</html>
