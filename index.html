@@ -15,14 +15,14 @@
     <script>
         mySpec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-    "data": {"url": "https://data.cityofchicago.org/resource/85ca-t3if.csv"},
+    "data": {"url": "https://data.cityofchicago.org/api/views/85ca-t3if/rows.csv"},
     "mark": "bar",
-      "width": 300,
-  "height": 200,
+    "width": 300,
+    "height": 200,
     "encoding": {
-        "x": {"field": "crash_hour", "type": "quantitative", "title": "Hour of Crash"},
+        "x": {"field": "CRASH_HOUR", "type": "quantitative", "title": "Hour of Crash"},
         "y": {"aggregate": "count", "type": "quantitative"},
-                "color": {"aggregate": "sum", "field": "injuries_total", "title": "Total Injuries"
+        "color": {"aggregate": "sum", "field": "INJURIES_TOTAL", "title": "Total Injuries"
         }
     }
 };
